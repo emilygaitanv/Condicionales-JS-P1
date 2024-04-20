@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emily Gaitan | DMN3BV | Turno Noche | 3 - 2024</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <script>
+        // Solicitar datos al usuario
+        var nombre = prompt("Ingrese su nombre:");
+        var edad = +prompt("Hola " + nombre + ", Ingrese su edad:");
+        var genero = prompt("Ingrese su género (femenino/masculino):");
+
+        // Verificar validez de edad
+        var edadValida = edad >= 0 && edad <= 105;
+
+        // Determinar color de fondo según el género
+        var colorFondo;
+        if (genero.toLowerCase() == "femenino") {
+            colorFondo = "#ffc0cb";
+        } else if (genero.toLowerCase() == "masculino") {
+            colorFondo = "#6495ed";
+        } else {
+            colorFondo = "#d3d3d3";
+        }
+
+        // Mostrar banner según edad y género
+        var bannerUrl;
+        if (edadValida) {
+            if (edad >= 18 && genero.toLowerCase() == "femenino") {
+                bannerUrl = "./img/18_mayor_femenino.svg";
+            } else if (edad >= 18 && genero.toLowerCase() == "masculino") {
+                bannerUrl = "./img/18_mayor_masculino.svg";
+            } else if (edad < 18 && genero.toLowerCase() == "femenino") {
+                bannerUrl = "./img/18_menor_femenino.svg";
+            } else if (edad < 18 && genero.toLowerCase() == "masculino") {
+                bannerUrl = "./img/18_menor_masculino.svg";
+            }
+        } else {
+            bannerUrl = "./img/edad-invalida.svg"; // Banner genérico si la edad es inválida
+        }
+
+        // Escribir banner en el documento
+        document.write('<header>\
+                            <h1 id="logo">Logo</h1>\
+                            <section id="banner">\
+                                <img src="' + bannerUrl + '" alt="Banner">\
+                            </section>\
+                        </header>');
+
+        // Escribir mensaje de bienvenida según el nombre
+        if (nombre && isNaN(nombre)) {
+            document.write('<h2>' + nombre + ', estos productos están pensados para vos</h2>');
+        } else {
+            document.write('<h2>Estos son algunos de nuestros productos</h2>');
+        }
+
+        // Establecer color de fondo del contenedor de productos
+        document.write('<style>\
+                            .products-container {\
+                                background-color: ' + colorFondo + ';\
+                            }\
+                        </style>');
+
+        // Mostrar productos según la edad
+        document.write('<main>\
+                            <div class="products-container">');
+        if (edadValida) {
+            if (edad >= 18) {
+                document.write('<div class="product">\
+                                    <img src="./img/sticker_01_femenino_mayor.svg" alt="Producto 1">\
+                                    <h3>Pack Stickers 10/10</h3>\
+                                    <p>Descripción breve</p>\
+                                </div>\
+                                <div class="product">\
+                                    <img src="./img/sticker_01_masculino_mayor.svg" alt="Producto 2">\
+                                    <h3>Pack Stickers Bee</h3>\
+                                    <p>Descripción breve</p>\
+                                </div>\
+                                <div class="product">\
+                                    <img src="./img/sticker_02_femenino_mayor.svg" alt="Producto 3">\
+                                    <h3>Pack Stickers Proud</h3>\
+                                    <p>Descripción breve</p>\
+                                </div>\
+                                <div class="product">\
+                                    <img src="./img/sticker_02_masculino_mayor.svg" alt="Producto 4">\
+                                    <h3>Pack Stickers Cowboy</h3>\
+                                    <p>Descripción breve</p>\
+                                </div>');
+            } else if (edad >= 13 && edad <= 17) {
+                document.write('<section class="product">\
+                                    <div>\
+                                        <img src="./img/sticker_03_masculino_mayor.svg" alt="Producto A">\
+                                        <h3>Pack Stickers CowStyle</h3>\
+                                        <p>Descripción breve</p>\
+                                    </div>\
+                                    <div>\
+                                        <img src="./img/sticker_03_femenino_mayor.svg" alt="Producto B">\
+                                        <h3>Pack Stickers Fabbbb</h3>\
+                                        <p>Descripción breve</p>\
+                                    </div>\
+                                    <div>\
+                                        <img src="./img/sticker_04_masculino_mayor.svg" alt="Producto C">\
+                                        <h3>Pack Stickers Lucky</h3>\
+                                        <p>Descripción breve</p>\
+                                    </div>\
+                                    <div>\
+                                        <img src="./img/sticker_04_femenino_mayor.svg" alt="Producto D">\
+                                        <h3>Pack Stickers Look</h3>\
+                                        <p>Descripción breve</p>\
+                                    </div> <\
+                                section > ');
+                }
+                else {
+                    document.write('<div class="product">\
+                                    <img src="./img/sticker_01_masculino_menor.svg" alt="Producto X">\
+                                    <h3>Producto X</h3>\
+                                    <p>Descripción breve</p>\
+                                </div>\
+                                <div class="product">\
+                                    <img src="./img/sticker_01_femenino_menor.svg" alt="Producto Y">\
+                                    <h3>Producto Y</h3>\
+                                    <p>Descripción breve</p>\
+                                </div>\
+                                <div class="product">\
+                                    <img src="./img/sticker_02_masculino_menor.svg" alt="Producto Z">\
+                                    <h3>Producto Z</h3>\
+                                    <p>Descripción breve</p>\
+                                </div>\
+                                <div class="product">\
+                                    <img src="./img/sticker_02_femenino_menor.svg" alt="Producto W">\
+                                    <h3>Producto W</h3>\
+                                    <p>Descripción breve</p>\
+                                </div>');
+                }
+            } else {
+                // Mostrar productos genéricos si la edad y/o genero es inválida
+                document.write('<div class="product">\
+                                <img src="./img/sticker_03_masculino_menor.svg" alt="Producto X">\
+                                <h3>Producto X</h3>\
+                                <p>Descripción breve</p>\
+                            </div>\
+                            <div class="product">\
+                                <img src="./img/sticker_03_femenino_menor.svg" alt="Producto Y">\
+                                <h3>Producto Y</h3>\
+                                <p>Descripción breve</p>\
+                            </div>\
+                            <div class="product">\
+                                <img src="./img/sticker_02_masculino_mayor.svg" alt="Producto Z">\
+                                <h3>Producto Z</h3>\
+                                <p>Descripción breve</p>\
+                            </div>\
+                            <div class="product">\
+                                <img src="./img/sticker_02_femenino_mayor.svg" alt="Producto W">\
+                                <h3>Producto W</h3>\
+                                <p>Descripción breve</p>\
+                            </div>');
+            }
+            document.write('</div>\
+                    </main>');
+
+            // Escribir footer
+            document.write('<footer>\
+                            <div id="Estudiante">\
+                                <p>Alumna: Emily Gaitan</p>\
+                            </div>\
+                            <div id="Materia">\
+                                <p>Materia: Diseño y Desarrollo Web l</p>\
+                            </div>\
+                            <div id="Carrera">\
+                                <p>Carrera: Diseño Multimedial</p>\
+                            </div>\
+                            <div id="Año">\
+                                <p>Año: 3 - 2024</p>\
+                            </div>\
+                            <div id="Docente">\
+                                <p>Docente: Omar Toyos</p>\
+                            </div>');
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juego de Adivinanza</title>
+</head>
+<body>
+  <h1>Juego de Adivinanza</h1>
+
+  <script>
+    // Pedir al usuario su nombre
+    var nombre = prompt("¡Bienvenido al Juego de Adivinanza! Por favor, ingresa tu nombre:");
+
+    // Pedir al usuario que ingrese un número
+    var numeroUsuario = +prompt("Hola " + nombre + ", por favor ingresa un número del 1 al 12:");
+
+    //Variable PC con valor dentro del rango
+    var numeroPC = 6
+
+      // Verificar si el número está dentro del rango permitido  
+    if (numeroUsuario >= 1 && numeroUsuario <= 12) {
+
+        // Comparar el número del usuario con el de la PC
+        if (numeroUsuario == numeroPC) {
+            document.write("<h2>¡Ganaste!</h2>");
+            document.write("<p>" + nombre + ": " + numeroUsuario + "</p>");
+            document.write("<p>PC: " + numeroPC + "</p>");
+        } else if (numeroUsuario < numeroPC) {
+            document.write("<h2>¡Perdiste!</h2>");
+            document.write("<p>" + nombre + ": " + numeroUsuario + "</p>");
+            document.write("<p>PC: " + numeroPC + "</p>");
+            document.write("<p>Te faltaron " + (numeroPC - numeroUsuario) + " unidades</p>");
+        } else {
+            document.write("<h2>¡Perdiste!</h2>");
+            document.write("<p>" + nombre + ": " + numeroUsuario + "</p>");
+            document.write("<p>PC: " + numeroPC + "</p>");
+            document.write("<p>Te pasaste por " + (numeroUsuario - numeroPC) + " unidades</p>");
+        }
+        
+    } else {
+        document.write("<h2>Ingreso inválido</h2>");
+        document.write("<p>Ponete bien los anteojos, ingresaste cualquier cosa, así no podemos jugar.</p>");
+    }
+
+  </script>
+</body>
+</html>
