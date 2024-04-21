@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emily Gaitan | DMN3BV | Turno Noche | 3 - 2024</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -55,7 +58,7 @@
 
         // Escribir mensaje de bienvenida según el nombre
         if (nombre && isNaN(nombre)) {
-            document.write('<h2>' + nombre + ', estos productos están pensados para vos</h2>');
+            document.write('<h2>' + nombre + ', estos productos estan pensados para vos</h2>');
         } else {
             document.write('<h2>Estos son algunos de nuestros productos</h2>');
         }
@@ -72,115 +75,127 @@
                             <div class="products-container">');
         if (edadValida) {
             if (edad >= 18) {
-                document.write('<div class="product">\
-                                    <img src="./img/sticker_01_femenino_mayor.svg" alt="Producto 1">\
-                                    <h3>Pack Stickers 10/10</h3>\
-                                    <p>Descripción breve</p>\
-                                </div>\
-                                <div class="product">\
-                                    <img src="./img/sticker_01_masculino_mayor.svg" alt="Producto 2">\
-                                    <h3>Pack Stickers Bee</h3>\
-                                    <p>Descripción breve</p>\
-                                </div>\
-                                <div class="product">\
-                                    <img src="./img/sticker_02_femenino_mayor.svg" alt="Producto 3">\
-                                    <h3>Pack Stickers Proud</h3>\
-                                    <p>Descripción breve</p>\
-                                </div>\
-                                <div class="product">\
-                                    <img src="./img/sticker_02_masculino_mayor.svg" alt="Producto 4">\
-                                    <h3>Pack Stickers Cowboy</h3>\
-                                    <p>Descripción breve</p>\
-                                </div>');
+                document.write('<section class="product">\
+                                    <div>\
+                                        <img src="./img/sticker_01_femenino_mayor.svg" alt="Producto 1">\
+                                        <h3>Pack Stickers 10/10</h3>\
+                                        <p>¡Colecciona los mejores stickers! Descubre nuestra variedad de diseños únicos.</p>\
+                                    </div>\
+                                    <div>\
+                                        <img src="./img/sticker_01_masculino_mayor.svg" alt="Producto 2">\
+                                        <h3>Pack Stickers Bee</h3>\
+                                        <p>Dale vida a tus dispositivos con nuestros increíbles stickers. ¡Hazte con los tuyos!</p>\
+                                    </div>\
+                                    <div>\
+                                        <img src="./img/sticker_02_femenino_mayor.svg" alt="Producto 3">\
+                                        <h3>Pack Stickers Proud</h3>\
+                                        <p>Personaliza tu estilo con nuestra selección de stickers. ¡Encuentra el tuyo!</p>\
+                                    </div>\
+                                    <div>\
+                                        <img src="./img/sticker_02_masculino_mayor.svg" alt="Producto 4">\
+                                        <h3>Pack Stickers Cowboy</h3>\
+                                        <p>Stickers de alta calidad para expresar tu personalidad. ¡Descubre nuestras novedades!</p>\
+                                    </div>\
+                                </section>');
             } else if (edad >= 13 && edad <= 17) {
                 document.write('<section class="product">\
                                     <div>\
                                         <img src="./img/sticker_03_masculino_mayor.svg" alt="Producto A">\
                                         <h3>Pack Stickers CowStyle</h3>\
-                                        <p>Descripción breve</p>\
+                                        <p>¡Colecciona los mejores stickers! Descubre nuestra variedad de diseños únicos.</p>\
                                     </div>\
                                     <div>\
                                         <img src="./img/sticker_03_femenino_mayor.svg" alt="Producto B">\
                                         <h3>Pack Stickers Fabbbb</h3>\
-                                        <p>Descripción breve</p>\
+                                        <p>Dale vida a tus dispositivos con nuestros increíbles stickers. ¡Hazte con los tuyos!</p>\
                                     </div>\
                                     <div>\
                                         <img src="./img/sticker_04_masculino_mayor.svg" alt="Producto C">\
                                         <h3>Pack Stickers Lucky</h3>\
-                                        <p>Descripción breve</p>\
+                                        <p>Personaliza tu estilo con nuestra selección de stickers. ¡Encuentra el tuyo!</p>\
                                     </div>\
                                     <div>\
                                         <img src="./img/sticker_04_femenino_mayor.svg" alt="Producto D">\
                                         <h3>Pack Stickers Look</h3>\
-                                        <p>Descripción breve</p>\
-                                    </div> <\
-                                section > ');
-                }
-                else {
-                    document.write('<div class="product">\
-                                    <img src="./img/sticker_01_masculino_menor.svg" alt="Producto X">\
-                                    <h3>Producto X</h3>\
-                                    <p>Descripción breve</p>\
-                                </div>\
-                                <div class="product">\
-                                    <img src="./img/sticker_01_femenino_menor.svg" alt="Producto Y">\
-                                    <h3>Producto Y</h3>\
-                                    <p>Descripción breve</p>\
-                                </div>\
-                                <div class="product">\
-                                    <img src="./img/sticker_02_masculino_menor.svg" alt="Producto Z">\
-                                    <h3>Producto Z</h3>\
-                                    <p>Descripción breve</p>\
-                                </div>\
-                                <div class="product">\
-                                    <img src="./img/sticker_02_femenino_menor.svg" alt="Producto W">\
-                                    <h3>Producto W</h3>\
-                                    <p>Descripción breve</p>\
-                                </div>');
-                }
+                                        <p>Stickers de alta calidad para expresar tu personalidad. ¡Descubre nuestras novedades!</p>\
+                                    </div>\
+                                </section>');
             } else {
-                // Mostrar productos genéricos si la edad y/o genero es inválida
-                document.write('<div class="product">\
-                                <img src="./img/sticker_03_masculino_menor.svg" alt="Producto X">\
-                                <h3>Producto X</h3>\
-                                <p>Descripción breve</p>\
-                            </div>\
-                            <div class="product">\
-                                <img src="./img/sticker_03_femenino_menor.svg" alt="Producto Y">\
-                                <h3>Producto Y</h3>\
-                                <p>Descripción breve</p>\
-                            </div>\
-                            <div class="product">\
-                                <img src="./img/sticker_02_masculino_mayor.svg" alt="Producto Z">\
-                                <h3>Producto Z</h3>\
-                                <p>Descripción breve</p>\
-                            </div>\
-                            <div class="product">\
-                                <img src="./img/sticker_02_femenino_mayor.svg" alt="Producto W">\
-                                <h3>Producto W</h3>\
-                                <p>Descripción breve</p>\
-                            </div>');
+                document.write('<section class="product">\
+                                        <div>\
+                                            <img src="./img/sticker_01_masculino_menor.svg" alt="Producto X">\
+                                            <h3>Producto X</h3>\
+                                            <p>¡Colecciona los mejores stickers! Descubre nuestra variedad de diseños únicos.</p>\
+                                        </div>\
+                                        <div>\
+                                            <img src="./img/sticker_01_femenino_menor.svg" alt="Producto Y">\
+                                            <h3>Producto Y</h3>\
+                                            <p>Dale vida a tus dispositivos con nuestros increíbles stickers. ¡Hazte con los tuyos!</p>\
+                                        </div>\
+                                        <div>\
+                                            <img src="./img/sticker_02_masculino_menor.svg" alt="Producto Z">\
+                                            <h3>Producto Z</h3>\
+                                            <p>Personaliza tu estilo con nuestra selección de stickers. ¡Encuentra el tuyo!</p>\
+                                        </div>\
+                                        <div>\
+                                            <img src="./img/sticker_02_femenino_menor.svg" alt="Producto W">\
+                                            <h3>Producto W</h3>\
+                                            <p>Stickers de alta calidad para expresar tu personalidad. ¡Descubre nuestras novedades!</p>\
+                                        </div>\
+                                    </section>');
             }
-            document.write('</div>\
+        } else {
+            // Mostrar productos genéricos si la edad es inválida
+            document.write('<section class="product">\
+                                    <div>\
+                                        <img src="./img/sticker_03_masculino_menor.svg" alt="Producto X">\
+                                        <h3>Producto X</h3>\
+                                        <p>¡Colecciona los mejores stickers! Descubre nuestra variedad de diseños únicos.</p>\
+                                    </div>\
+                                    <div>\
+                                        <img src="./img/sticker_03_femenino_menor.svg" alt="Producto Y">\
+                                        <h3>Producto Y</h3>\
+                                        <p>Dale vida a tus dispositivos con nuestros increíbles stickers. ¡Hazte con los tuyos!</p>\
+                                    </div>\
+                                    <div>\
+                                        <img src="./img/sticker_02_masculino_mayor.svg" alt="Producto Z">\
+                                        <h3>Producto Z</h3>\
+                                        <p>Personaliza tu estilo con nuestra selección de stickers. ¡Encuentra el tuyo!</p>\
+                                    </div>\
+                                    <div>\
+                                        <img src="./img/sticker_02_femenino_mayor.svg" alt="Producto W">\
+                                        <h3>Producto W</h3>\
+                                        <p>Stickers de alta calidad para expresar tu personalidad. ¡Descubre nuestras novedades!</p>\
+                                    </div>\
+                                </section>');
+        }
+        document.write('</div>\
                     </main>');
 
-            // Escribir footer
-            document.write('<footer>\
-                            <div id="Estudiante">\
-                                <p>Alumna: Emily Gaitan</p>\
-                            </div>\
-                            <div id="Materia">\
-                                <p>Materia: Diseño y Desarrollo Web l</p>\
-                            </div>\
-                            <div id="Carrera">\
-                                <p>Carrera: Diseño Multimedial</p>\
-                            </div>\
-                            <div id="Año">\
-                                <p>Año: 3 - 2024</p>\
-                            </div>\
-                            <div id="Docente">\
-                                <p>Docente: Omar Toyos</p>\
-                            </div>');
+        // Escribir footer
+        document.write('<footer>\
+                            <figure id="profile-pic">\
+                                <picture>\
+                                        <img src="./img/profile-pic-emi.jpg" alt="Imagen de perfil">\
+                                </picture>\
+                            </figure>\
+                            <section id="datos-estudiante">\
+                                <div id="estudiante">\
+                                    <p>Alumna: Emily Gaitan</p>\
+                                </div>\
+                                <div id="materia">\
+                                    <p>Materia: Diseño y Desarrollo Web l</p>\
+                                </div>\
+                                <div id="carrera">\
+                                    <p>Carrera: Diseño Multimedial</p>\
+                                </div>\
+                                <div id="ano">\
+                                    <p>Año: 3 - 2024</p>\
+                                </div>\
+                                <div id="docente">\
+                                    <p>Docente: Omar Toyos</p>\
+                                </div>\
+                            </section>');
     </script>
 
 </body>
