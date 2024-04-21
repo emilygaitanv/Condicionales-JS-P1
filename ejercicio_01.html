@@ -43,6 +43,8 @@
                 bannerUrl = "./img/18_menor_femenino.svg";
             } else if (edad < 18 && genero.toLowerCase() == "masculino") {
                 bannerUrl = "./img/18_menor_masculino.svg";
+            } else {
+                bannerUrl = "./img/edad-invalida.svg"; // Banner genérico si la edad es inválida
             }
         } else {
             bannerUrl = "./img/edad-invalida.svg"; // Banner genérico si la edad es inválida
@@ -73,7 +75,7 @@
         // Mostrar productos según la edad
         document.write('<main>\
                             <div class="products-container">');
-        if (edadValida) {
+                                if (edadValida) {
             if (edad >= 18) {
                 document.write('<section class="product">\
                                     <div>\
